@@ -1,0 +1,120 @@
+body {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(bg_image.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+.workspace {
+    width: 360px;
+    padding: 10% 0 0;
+    margin: auto;
+}
+
+.factoringArea {
+    position: relative;
+    z-index: 1;
+    background: rgba(214, 219, 241, 0.8);
+    max-width: 360px;
+    padding: 25px;
+    margin: 0 auto 100px;
+    text-align: center;
+}
+
+.factoringArea label {
+    padding: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+
+.factoringArea input {
+    font-family: 'Times New Roman', Times, serif;
+    background: #eff0ff;
+    width: 100%;
+    border: 0;
+    margin: 0 0 15px;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+.factoringArea #factorButton {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    background: #4d30d1;
+    width: 100%;
+    border: 0;
+    padding: 5px;
+    color: #ffffff;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.factoringArea .output {
+    width: 100%;
+    height: 25%;
+    overflow: auto;
+    overflow-x: auto;
+    position: relative;
+}
+
+.errorArea {
+    padding-bottom: 10px;
+}
+
+.errorArea .msg {
+    margin: 15px 0 0;
+    color: rgb(255, 0, 0);
+    font-size: 14px;
+}
+
+.errorArea .resetButton {
+    background: rgb(250, 129, 129);
+    color: rgb(131, 5, 5);
+    width: 75%;
+    height: 25px;
+}
+
+.errorArea .resetButton:hover {
+    background: rgba(0, 255, 34, 0.932);
+}
+
+.factoringArea .resultsArea {
+    position: relative;
+    width: 100%;
+    height: 25%;
+    background: #eff0ff;
+    overflow: auto;
+}
+
+.factoringArea .clearButton {
+    background: #4caf50;
+    color: white;
+    margin: 6px 0px;
+    padding: 16px 32px;
+}
+
+.result {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.clockArea {
+    position: relative;
+    height: 50px;
+    background: rgba(214, 219, 241, 0.8);
+    max-width: 360px;
+    padding: 15px;
+    margin: 0 auto 10px;
+}
+
+.clockArea .clockText {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: left;
+    float: left;
+}
+
+.clockArea #glyphClock {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 100;
+    text-align: center;
+}

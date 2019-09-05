@@ -1,0 +1,250 @@
+<html>
+
+<head>
+    <title>Prime Factorization_v0.1</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="workspace">
+
+        <div class="clockArea">
+            <p class="clockText"></p>
+            <p id="glyphClock">&uarr;</p>
+        </div>
+
+        <div class="factoringArea">
+            <form class="seedForm">
+                <label>Enter the Number for Prime Factorization: </label>
+                <input type="number" id="seedInput" value="2" />
+                <input type="button" id="factorButton" value="FACTOR">
+                <br>
+            </form>
+            <div class="errorArea" hidden>
+                <p class="msg"></p>
+                <button class="resetButton">Reset</button>
+            </div>
+
+            <div class="resultsArea">
+                <p class="result">-- Results will be displayed here --</p>
+            </div>
+
+            <input type="button" class="clearButton" value="Clear" title="Click to Clear Factors">
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js">
+    </script>
+
+
+    <script>
+        //(Assumption: Prime primeFactors not possible for negative numbers)
+        console.log("Assumption: Prime primeFactors not possible for negative numbers. Refer to answer one of https://primes.utm.edu/notes/faq/negative_primes.html");
+        let seed = parseInt($('#seedInput').val());
+        let factors = [];
+        const defaultResultMsg = "-- Results will be displayed here --";
+        const defaultErrorMsg = "-- Please enter a number greater to ZERO --";
+        const glyphs = ["&uarr;", "&nearr;", "&rarr;", "&searr;", "&darr;", "&swarr;", "&larr;", "&nwarr;"];
+        let glyphTracker = 0;
+
+        //load and define a few rules as soon as the document loads
+        $(function() {
+            //clock functionality. updates the timer every second and updates the glyph every 125 millisecond
+            setInterval(function() {
+                var now = new Date;
+                $('.clockText').text(now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds());
+            }, 1000);
+            setInterval(function() {
+                $('#glyphClock').empty();
+                $('#glyphClock').append(glyphs[glyphTracker]);
+                glyphTracker++;
+                if (glyphTracker === glyphs.length) {
+                    glyphTracker = 0;
+                }
+            }, 125);
+
+
+            //do not display the Clear button unless there are values in the result
+            $('.clearButton').prop('hidden', true);
+
+            /** 
+             * Checks whenever the Input Seed Value on startup and 
+             *   If the number is less than or equal to 0
+             *       Show the reset button with error message 
+             *       Disable the Click functionality of Factor button and change Color to Grey-ish Red
+             *   Else if the number is greater than 2
+             *       Hide the reset button and error message 
+             *       Enable the Click functionality of Factor button and reset color to blue
+             * 
+             **/
+            if (checkSeedValidity(seed)) {
+                $('#factorButton').removeAttr("disabled");
+                $('.msg').text("");
+                $('.errorArea').prop('hidden', true);
+            } else {
+                $("#factorButton").attr("disabled", true);
+                $('.msg').text(defaultErrorMsg);
+                $('.errorArea').prop('hidden', false);
+                $('.result').text(defaultErrorMsg);
+                $("#factorButton").css("background", "#dddddd");
+            }
+
+            /** 
+             * Checks whenever the Input Seed Value changes and 
+             *   If the number is less than or equal to 0
+             *       Show the reset button with error message 
+             *       Disable the Click functionality of Factor button
+             *   Else if the number is greater than 2
+             *       Hide the reset button and error message 
+             *       Enable the Click functionality of Factor button
+             * 
+             **/
+            $(":input").bind('keyup mouseup', function() {
+                seed = parseInt($('#seedInput').val());
+                if (checkSeedValidity(seed)) {
+                    $('#factorButton').removeAttr("disabled");
+                    $('.msg').text("");
+                    $('.errorArea').prop('hidden', true);
+                    $("#factorButton").css("background", "#4d30d1");
+                } else {
+                    $("#factorButton").attr("disabled", true);
+                    $("#factorButton").css("background", "#dddddd");
+                    $('.msg').text(defaultErrorMsg);
+                    $('.errorArea').prop('hidden', false);
+                }
+            });
+
+        });
+
+        $('#factorButton').click(function() {
+            factors = [];
+            let isPrime = false;
+            if (isNaN(seed)) {
+                $('.result').text(defaultErrorMsg);
+            } else if (seed === 1) {
+                $('.result').text(seed + " is neither Prime nor Composite. \n Enter another number and press 'FACTOR' button.");
+            } else {
+                primeFactorization(seed);
+                (factors.length === 1) ? (isPrime = true) : (isPrime = false);
+                $('.result').text(setResultString(seed, factors, isPrime));
+            }
+            $('.clearButton').prop('hidden', false);
+        })
+
+        //takes the seed as input and finds all the prime factors. Recursive for faster results
+        function primeFactorization(seed) {
+            if (checkForPrime(seed)) {
+                factors.push(seed);
+            } else {
+                for (i = 2; i <= Math.sqrt(seed); i++) {
+                    if (seed % i == 0) {
+                        factors.push(i);
+                        primeFactorization(seed / i);
+                    }
+                }
+            }
+
+        }
+
+        //returns true if val is a prime number. Source: StackOverflow
+        checkForPrime = function(val) {
+            //for values 0 and negatives
+            if (val <= 1)
+                return false;
+
+            //returns true for 1,2,3 as they are primes
+            if (val <= 3)
+                return true;
+
+            //for multiples of 2 and 3
+            if ((val % 2) === 0 || (val % 3) === 0)
+                return false;
+
+            for (let x = 5;
+                (x * x) <= val; x = (x + 6)) {
+                if ((val % x) === 0 || (val % (x + 2)) === 0)
+                    return false;
+            }
+
+            return true;
+            // var n = val
+            // var flag = 0;
+            // var m = n / 2;
+            // if (n == 0 || n == 1) {
+            //     // System.out.println(n + " is not prime number");
+            //     return false;
+            // } else {
+            //     for (i = 2; i <= m; i++) {
+            //         if (n % i == 0) {
+            //             // System.out.println(n + " is not prime number");
+            //             flag = 1;
+            //             //  break; 
+            //             return false;
+            //         }
+            //     }
+            //     if (flag == 0) {
+            //         // System.out.println(n + " is prime number");
+            //         return true;
+            //     }
+            // } //end of else
+        };
+
+        /**
+         * sets the Prime factors for the result.
+         * If the seed itself is a Prime number then '<N> is a Prime' is returned
+         * Else '<N> = <factor 1> * <factor 2> * ...' is returned
+         **/
+        function setResultString(seed, primeFactors, isPrime) {
+            let resultString = "";
+            if (isPrime) {
+                resultString = primeFactors[0] + " is a Prime";
+            } else {
+                resultString = seed + " = ";
+                primeFactors.forEach(factor => {
+                    resultString = resultString + factor + " * ";
+                });
+                resultString = resultString.slice(0, -3);
+            }
+
+            return resultString;
+        }
+
+        /**
+         * reset the value in Input field to 2
+         * enables the Factor button and sets it default color
+         * hides the error Message
+         * hides the Reset Button
+         * hides the Clear Button
+         **/
+        $('.resetButton').click(function() {
+            $("#seedInput").val(2);
+            seed = parseInt($('#seedInput').val());
+            $('#factorButton').css("background", "#4d30d1");
+            $('#factorButton').removeAttr("disabled");
+            $('.msg').text("");
+            $('.errorArea').prop('hidden', true);
+            $('.result').text(defaultResultMsg);
+            $('.clearButton').prop('hidden', true);
+        })
+
+        /**
+         * clear the contents in the resultArea
+         * hides the Clear Button
+         **/
+        $('.clearButton').click(function() {
+            $('.result').text(defaultResultMsg);
+            $('.clearButton').prop('hidden', true);
+        });
+
+        //Returns true if the value is greater than 0 else false
+        function checkSeedValidity(seed) {
+            if (seed <= 0) {
+                return false
+            } else {
+                return true;
+            }
+        }
+    </script>
+</body>
+
+</html>
