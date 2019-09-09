@@ -10,9 +10,9 @@ TABLE OF CONTENTS\
 	<pre> TEST CASES	</pre>
 
 
-INTRODUCTION\
-	The Prime Factorial Generator takes a positive number as input and generates its Prime Factors. \
-	Assumption: Prime Factors not possible for negative numbers. Refer to answer one of https://primes.utm.edu/notes/faq/negative_primes.html
+INTRODUCTION
+<pre>	The Prime Factorial Generator takes a positive number as input and generates its Prime Factors. </pre>
+<pre>	Assumption: Prime Factors not possible for negative numbers. Refer to answer one of https://primes.utm.edu/notes/faq/negative_primes.html </pre>
 
 REQUIREMENTS
 <pre>	When a page loades, the following information should be provided:</pre>
@@ -48,23 +48,23 @@ REQUIREMENTS
 			<li> RESET button must be activated</li>
 		</ul>
 		
-SOFTWARES REQUIRED\
-	The software that are needed for the application to be edited or executed 
+SOFTWARES REQUIRED
+<pre>	The software that are needed for the application to be edited or executed </pre>
 	<ul>
 	<li> ‘browser’ --> Any latest browser like Chrome, Firefox or Safari.</li>
 	</ul>
 
-SOURCE CODE\
-	The Source code for the application is in the ‘PrimeFactorialGenerator’ folder
+SOURCE CODE
+<pre>	The Source code for the application is in the ‘PrimeFactorialGenerator’ folder</pre>
 	<ul>
 	<li> ‘index.html’ --> This file has the javascript and jQuery source code for the application.</li>
 	<li>‘styles.css’ --> This file has the styling for the page.</li>
 	</ul>
 
-INSTALLATION NOTES\
-	Simply double click on the 'index.html' file or Right-click on the 'index.html' file and open it in any browser of your choice.
+INSTALLATION NOTES
+<pre>	Simply double click on the 'index.html' file or Right-click on the 'index.html' file and open it in any browser of your choice.</pre>
 
-ABOUT THE APPLICATION\
+ABOUT THE APPLICATION
 <pre>	This application loads and allows the user to feed a positive number as Input and generate its Prime Factors. The application begins at the page displayed in screen shown in Figure 1.</pre> 
 
 ![](readme_images/fig1.png)	
@@ -77,7 +77,7 @@ Figure 1: Load-up screen and also Reset screen
 
 	Figure 2: Screen with Error message for in-appropriate Inputs.
 	
-TEST CASES\
+TEST CASES
 <pre>	If the user provides an valid input but there are no prime factors for it then the screen show in Figure 3 is displayed.</pre>
 	
 ![](readme_images/fig3.png)
