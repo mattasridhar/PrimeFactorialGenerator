@@ -14,8 +14,8 @@ INTRODUCTION\
 	The Prime Factorial Generator takes a positive number as input and generates its Prime Factors. \
 	Assumption: Prime Factors not possible for negative numbers. Refer to answer one of https://primes.utm.edu/notes/faq/negative_primes.html
 
-REQUIREMENTS\
-	<pre>When a page loades, the following information should be provided:</pre>
+REQUIREMENTS
+<pre>	When a page loades, the following information should be provided:</pre>
 		<ul>
 			<li> A Clock displaying the current time in 24 hr format.</li>
 			<li> A timer spinner that cycles every 125ms</li>
@@ -27,13 +27,13 @@ REQUIREMENTS\
 			<li> A RESET button which when clicked clears all the generated prime factors for the given input. The button should also reset the Input field and clear the Error messages if any.</li>
 			<li> An Error area which is displayed whenever the user provides inputs which do not follow the constraints.</li>
 		</ul>
-	
-	<pre>When the User provides an input, it should comply with the following constraints:</pre>
+		
+<pre>	When the User provides an input, it should comply with the following constraints:</pre>
 		<ul>
 			<li> The number should be positive and greater than Zero (0)</li>
 		</ul>
 	
-	<pre>When the user provides a valid input and clicks on the GENERATE Button:</pre>
+<pre>	When the user provides a valid input and clicks on the GENERATE Button:</pre>
 		<ul>
 			<li> Default message must be displayed until the factors are calculated.</li>
 			<li> Default message must be displayed until the factors are calculated.</li>
@@ -41,7 +41,7 @@ REQUIREMENTS\
 			<li> CLEAR button must be displayed</li>
 		</ul>
 		
-	<pre>When the user provides invalid input:</pre>
+<pre>	When the user provides invalid input:</pre>
 		<ul>
 			<li> Error message must be displayed</li>
 			<li> GENERATE Button must be de-activated.</li>
@@ -65,43 +65,42 @@ INSTALLATION NOTES\
 	Simply double click on the 'index.html' file or Right-click on the 'index.html' file and open it in any browser of your choice.
 
 ABOUT THE APPLICATION\
-	This application loads and allows the user to feed a positive number as Input and generate its Prime Factors. The application begins at the page displayed in screen shown in Figure 1. 
+<pre>	This application loads and allows the user to feed a positive number as Input and generate its Prime Factors. The application begins at the page displayed in screen shown in Figure 1.</pre> 
 
 ![](readme_images/fig1.png)	
 
-	Figure 1: Load-up screen and also Reset screen
-
-	If the user provides an in-valid input then the screen show in Figure 2 is displayed.
+Figure 1: Load-up screen and also Reset screen
+	
+<pre>	If the user provides an in-valid input then the screen show in Figure 2 is displayed.</pre>
 	
 ![](readme_images/fig2.png)
 
 	Figure 2: Screen with Error message for in-appropriate Inputs.
 	
 TEST CASES\
-
-	If the user provides an valid input but there are no prime factors for it then the screen show in Figure 3 is displayed.
+<pre>	If the user provides an valid input but there are no prime factors for it then the screen show in Figure 3 is displayed.</pre>
 	
 ![](readme_images/fig3.png)
 
-	Figure 3: Screen when the numeric One is attempted to be factored.
+Figure 3: Screen when the numeric One is attempted to be factored.
 
-	If the user provides an no input then the screen show in Figure 4 is displayed.
+<pre>	If the user provides an no input then the screen show in Figure 4 is displayed. </pre>
 	
 ![](readme_images/fig4.png)
 
-	Figure 4: Screen when blank input is attempted to be factored.
+Figure 4: Screen when blank input is attempted to be factored.
 
-	If the user provides a valid input then the screen show in Figure 5 is displayed.
+<pre>	If the user provides a valid input then the screen show in Figure 5 is displayed.</pre>
 	
 ![](readme_images/fig5.png)
 
-	Figure 5: Screen for normal number prime factorization.
+Figure 5: Screen for normal number prime factorization.
 
-	If the user provides a valid large input (9007199254740881) then the screen show in Figure 6 is displayed.
+<pre>	If the user provides a valid large input (9007199254740881) then the screen show in Figure 6 is displayed.</pre>
 	
 ![](readme_images/fig6.png)
 
-	Figure 6: Screen for large number prime factorization.
+Figure 6: Screen for large number prime factorization.
 
 
 
