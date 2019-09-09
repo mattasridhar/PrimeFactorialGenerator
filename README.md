@@ -14,8 +14,8 @@ INTRODUCTION
 <pre>	The Prime Factorial Generator takes a positive number as input and generates its Prime Factors. </pre>
 <pre>	Assumption: Prime Factors not possible for negative numbers. Refer to answer one of https://primes.utm.edu/notes/faq/negative_primes.html </pre>
 
-REQUIREMENTS
-<pre>	When a page loades, the following information should be provided:</pre>
+REQUIREMENTS\
+	When a page loades, the following information should be provided:
 		<ul>
 			<li> A Clock displaying the current time in 24 hr format.</li>
 			<li> A timer spinner that cycles every 125ms</li>
@@ -28,12 +28,12 @@ REQUIREMENTS
 			<li> An Error area which is displayed whenever the user provides inputs which do not follow the constraints.</li>
 		</ul>
 		
-<pre>	When the User provides an input, it should comply with the following constraints:</pre>
+When the User provides an input, it should comply with the following constraints:
 		<ul>
 			<li> The number should be positive and greater than Zero (0)</li>
 		</ul>
 	
-<pre>	When the user provides a valid input and clicks on the GENERATE Button:</pre>
+When the user provides a valid input and clicks on the GENERATE Button:
 		<ul>
 			<li> Default message must be displayed until the factors are calculated.</li>
 			<li> Default message must be displayed until the factors are calculated.</li>
@@ -41,21 +41,21 @@ REQUIREMENTS
 			<li> CLEAR button must be displayed</li>
 		</ul>
 		
-<pre>	When the user provides invalid input:</pre>
+When the user provides invalid input:
 		<ul>
 			<li> Error message must be displayed</li>
 			<li> GENERATE Button must be de-activated.</li>
 			<li> RESET button must be activated</li>
 		</ul>
 		
-SOFTWARES REQUIRED
-<pre>	The software that are needed for the application to be edited or executed </pre>
+SOFTWARES REQUIRED\
+The software that are needed for the application to be edited or executed
 	<ul>
 	<li> ‘browser’ --> Any latest browser like Chrome, Firefox or Safari.</li>
 	</ul>
 
-SOURCE CODE
-<pre>	The Source code for the application is in the ‘PrimeFactorialGenerator’ folder</pre>
+SOURCE CODE\
+The Source code for the application is in the ‘PrimeFactorialGenerator’ folder
 	<ul>
 	<li> ‘index.html’ --> This file has the javascript and jQuery source code for the application.</li>
 	<li>‘styles.css’ --> This file has the styling for the page.</li>
