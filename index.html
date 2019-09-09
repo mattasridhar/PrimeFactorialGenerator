@@ -17,7 +17,7 @@
             <form class="seedForm">
                 <label>Enter the Number for Prime Factorization: </label>
                 <input type="number" id="seedInput" value="2" />
-                <input type="button" id="factorButton" value="FACTOR">
+                <input type="button" id="factorButton" value="GENERATE">
                 <br>
             </form>
             <div class="errorArea" hidden>
@@ -42,7 +42,7 @@
         console.log("Assumption: Prime primeFactors not possible for negative numbers. Refer to answer one of https://primes.utm.edu/notes/faq/negative_primes.html");
         let seed = parseInt($('#seedInput').val());
         let factors = [];
-        const defaultResultMsg = "-- Results will be displayed here --";
+        const defaultResultMsg = "-- The Prime Factors will be populated here --";
         const defaultErrorMsg = "-- Please enter a number greater to ZERO --";
         const glyphs = ["&uarr;", "&nearr;", "&rarr;", "&searr;", "&darr;", "&swarr;", "&larr;", "&nwarr;"];
         let glyphTracker = 0;
