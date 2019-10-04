@@ -52,7 +52,9 @@
             //clock functionality. updates the timer every second and updates the glyph every 125 millisecond
             setInterval(function() {
                 var now = new Date;
-                $('.clockText').text(now.getHours() + ":" + now.getMinutes() + ":" + now.getSeconds());
+                $('.clockText').text(((now.getHours()< 10)?("0"+now.getHours()): now.getHours())
+                 + ":" + ((now.getMinutes()<10)?("0"+now.getMinutes()):(now.getMinutes())) 
+                 + ":" + ((now.getSeconds()<10)?("0"+now.getSeconds()):(now.getSeconds())));
             }, 1000);
             setInterval(function() {
                 $('#glyphClock').empty();
