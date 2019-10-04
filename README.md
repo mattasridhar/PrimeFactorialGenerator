@@ -11,7 +11,11 @@ TABLE OF CONTENTS\
 
 
 INTRODUCTION
-<pre>	The Prime Factorial Generator takes a positive number as input and generates its Prime Factors. </pre>
+<pre>	The Prime Factorial Generator takes a positive number as input and generates its Prime Factors. </pre><br>
+<pre>Checkout the Demo</pre>
+![](readme_images/PrimeFactorialGeneratorDemo.gif)
+<br>
+
 <pre>	Assumption: Prime Factors not possible for negative numbers. Refer to answer one of https://primes.utm.edu/notes/faq/negative_primes.html </pre>
 
 REQUIREMENTS\
